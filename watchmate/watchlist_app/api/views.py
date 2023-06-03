@@ -66,8 +66,8 @@ class StreamplatformAV(APIView):
 class StreamplatformDetailAV(APIView):
     
     def get(self,request,pk):
-        st=StreamPlatform.objects.get(pk=pk)
-        seri=StreamPlatformserializer(st)
+        data=StreamPlatform.objects.get(pk=pk)
+        seri=StreamPlatformserializer(data)
         return Response(seri.data)
 
     def put(self,request,pk):
